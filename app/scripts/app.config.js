@@ -1,15 +1,15 @@
-'use strict';
+"use strict";
 
-angular.module('jwtAngularApp').config(function($urlRouterProvider, $stateProvider) {
+angular.module("jwtAngularApp").config(function($urlRouterProvider, $stateProvider) {
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise("/");
   $stateProvider
-  .state('main', {
-    url: '/',
-    templateUrl: '/views/main.html',
+  .state("main", {
+    url: "/",
+    templateUrl: "/views/main.html",
   })
-  .state('register', {
-    url: '/register',
-    templateUrl: '/views/register.html',
+  .state("register", {
+    url: "/register",
+    templateUrl: "/views/register.html",
   });
 });
