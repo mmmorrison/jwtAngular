@@ -8,5 +8,4 @@
  *
  * Main module of the application.
  */
-angular
-  .module('jwtAngularApp', ['ui-router']);
+angular.module('jwtAngularApp', ['ui.router']);
