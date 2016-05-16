@@ -17,11 +17,11 @@ app.use(function (req, res, next) {
 
 app.post('/register', function(req, res) {
   res.send('hi')
-})
+});
 
 mongoose.connect("mongodb://localhost/jwtAngular");
 
 
 var server = app.listen(3000, function() {
   console.log('api listening on', server.address().port);
-})
+});
