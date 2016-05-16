@@ -1,3 +1,3 @@
 "use strict";
 
-angular.module("jwtAngularApp", ["ui.router"]);
+angular.module("jwtAngularApp", ["ui.router", 'ngAnimate']);
