@@ -48,7 +48,7 @@ app.get("/jobs", jobs);
 
 app.post("/auth/google", googleAuth);
 
-mongoose.connect("mongodb://localhost/psjwt");
+mongoose.connect("mongodb://localhost/jwtAngularApp");
 
 var server = app.listen(3000, function () {
 	console.log("api listening on ", server.address().port);
