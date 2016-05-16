@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('jwtAngularApp').controller('RegisterCtrl', function ($scope, $auth) {
+angular.module('psJwtApp').controller('RegisterCtrl', function ($scope, alert, $auth) {
 	$scope.submit = function () {
 		$auth.signup({
 			email: $scope.email,

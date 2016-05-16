@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: alert', function () {
+describe('Service: authToken', function () {
 
   // load the service's module
   beforeEach(module('jwtAngularApp'));
 
   // instantiate service
-  var alert;
-  beforeEach(inject(function (_alert_) {
-    alert = _alert_;
+  var authToken;
+  beforeEach(inject(function (_authToken_) {
+    authToken = _authToken_;
   }));
 
   it('should do something', function () {
-    expect(!!alert).toBe(true);
+    expect(!!authToken).toBe(true);
   });
 
 });
