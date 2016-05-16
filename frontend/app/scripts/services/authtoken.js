@@ -1,23 +1,31 @@
 'use strict';
 
-/**
- * @ngdoc service
- * @name jwtAngularApp.authToken
- * @description
- * # authToken
- * Factory in the jwtAngularApp.
- */
-angular.module('jwtAngularApp')
-  .factory('authToken', function () {
-    // Service logic
-    // ...
+angular.module('jwtAngularApp').factory('authToken', function($window) {
+    var storage = $window.localStorage;
+    var cachedToken;
+    var userToken = 'userToken';
+    var isAuthenticated = false;
+    var authToken = {
+        setToken: function(token) {
+            cachedToken = token;
+            storage.setItem(userToken, token);
+            isAuthenticated = true;
+        },
+        getToken: function() {
+            if (!cachedToken)
+                cachedToken = storage.getItem(userToken);
 
-    var meaningOfLife = 42;
+            return cachedToken;
+        },
+        isAuthenticated: function() {
+            return !!authToken.getToken();
+        },
+        removeToken: function() {
+            cachedToken = null;
+            storage.removeItem(userToken);
+            isAuthenticated = false;
+        }
+    }
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+    return authToken;
+});
